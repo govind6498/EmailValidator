@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 public class EmailValidator {
 	public static void checkValidEmail(String email) {
 		boolean isEmail;
-		String emailRegex="^[a-zA-Z][.@a-zA-Z]*$";
+		String emailRegex="^[a-zA-Z]*[@]{1}[.a-zA-Z]*$";
 		Pattern patternObject = Pattern.compile(emailRegex);
 		if(email==null) {
 			isEmail = false;
@@ -21,7 +21,7 @@ public class EmailValidator {
 		String email = "abc.xyz@bridgelabz.co.in";
 		checkValidEmail(email);
 
-		email = ".abc@abc.com";
+		email = "abc@abc.com";
 		checkValidEmail(email);
 	}
 }
